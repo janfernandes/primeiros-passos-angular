@@ -24,4 +24,8 @@ export class AppComponent {
   alterarNome(event: any){
     this.nome = event.target.value;
   }
+
+  adicionarOutrojeito(nome: string){
+    this.nome = nome;
+  }
 }
