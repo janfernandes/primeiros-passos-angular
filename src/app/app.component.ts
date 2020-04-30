@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'meu-projeto';
+  nome = 'Janayna';
+  idade = 10;
+
+  getIdade(){
+    return this.idade;
+  }
+
+  adicionar(){
+    console.log(`Adicionando ${this.nome}`);
+
+    const numero = Math.round(Math.random() * 100);
+    this.nome = 'Janix' + numero;
+  }
+
+  alterarNome(event: any){
+    this.nome = event.target.value;
+  }
 }
