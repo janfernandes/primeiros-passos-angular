@@ -6,21 +6,24 @@
 
   <div class="form-group">
     <label>Nome</label>
-    <input type="text" class="form-control" (input)="alterarNome($event)" value="{{nome}}">
+      <input type="text" class="form-control" [(ngModel)]="nome">
   </div>
 
-  <button type="button" class="btn btn-primary" (click)="adicionar()">Adicionar</button>
+  <button type="button" class="btn btn-primary"
+          (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
 
+<!--  bind-disabled ou [disabled]-->
+<!--  (input)="alterarNome($event)" value="{{nome}}" é o mesmo que [(ngModel)]="nome"-->
 
-  <div class="alert alert-primary" role="alert">
-    Outro jeito de fazer: <strong>{{nome}}</strong>
-  </div>
+<!--  <div class="alert alert-primary" role="alert">-->
+<!--    Outro jeito de fazer: <strong>{{nome}}</strong>-->
+<!--  </div>-->
 
-  <div class="form-group">
-    <label>Nome</label>
-    <input type="text" class="form-control" #nomeInput>
-  </div>
+<!--  <div class="form-group">-->
+<!--    <label>Nome</label>-->
+<!--    <input type="text" class="form-control" #nomeInput>-->
+<!--  </div>-->
 
-  <button type="button" class="btn btn-primary" (click)="adicionarOutrojeito(nomeInput.value)">Adicionar</button>
+<!--  <button type="button" class="btn btn-primary" (click)="adicionarOutrojeito(nomeInput.value)">Adicionar</button>-->
 
 </div>

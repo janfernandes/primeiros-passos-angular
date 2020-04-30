@@ -25,7 +25,7 @@ export class AppComponent {
     this.nome = event.target.value;
   }
 
-  adicionarOutrojeito(nome: string){
-    this.nome = nome;
-  }
+  // adicionarOutrojeito(nome: string){
+  //   this.nome = nome;
+  // }
 }
