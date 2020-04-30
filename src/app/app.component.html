@@ -1,29 +1,39 @@
 <div class="container">
-  <h1 class="display-4">Meu nome é {{nome}} e minha idade é {{getIdade() + 20}}!</h1>
-  <div class="alert alert-primary" role="alert">
+<!--  <h1 class="display-4">Meu nome é {{nome}} e minha idade é {{getIdade() + 20}}!</h1>-->
+  <div class="alert alert-primary" role="alert" *ngIf="adicionado">
     Funcionário adicionado: <strong>{{nome}}</strong>
   </div>
 
   <div class="form-group">
     <label>Nome</label>
-      <input type="text" class="form-control" [(ngModel)]="nome">
+    <input type="text" class="form-control" [(ngModel)]="nome"
+           (focus)="adicionado = false">
   </div>
 
   <button type="button" class="btn btn-primary"
-          (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+          (click)="adicionar()" [disabled]="nome.length == 0">Adicionar
+  </button>
 
-<!--  bind-disabled ou [disabled]-->
-<!--  (input)="alterarNome($event)" value="{{nome}}" é o mesmo que [(ngModel)]="nome"-->
+  <!--  bind-disabled ou [disabled]-->
+  <!--  (input)="alterarNome($event)" value="{{nome}}" é o mesmo que [(ngModel)]="nome"-->
 
-<!--  <div class="alert alert-primary" role="alert">-->
-<!--    Outro jeito de fazer: <strong>{{nome}}</strong>-->
-<!--  </div>-->
+  <!--  <div class="alert alert-primary" role="alert">-->
+  <!--    Outro jeito de fazer: <strong>{{nome}}</strong>-->
+  <!--  </div>-->
 
-<!--  <div class="form-group">-->
-<!--    <label>Nome</label>-->
-<!--    <input type="text" class="form-control" #nomeInput>-->
-<!--  </div>-->
+  <!--  <div class="form-group">-->
+  <!--    <label>Nome</label>-->
+  <!--    <input type="text" class="form-control" #nomeInput>-->
+  <!--  </div>-->
 
-<!--  <button type="button" class="btn btn-primary" (click)="adicionarOutrojeito(nomeInput.value)">Adicionar</button>-->
+  <!--  <button type="button" class="btn btn-primary" (click)="adicionarOutrojeito(nomeInput.value)">Adicionar</button>-->
 
+  <div class="row" style="margin-top: 20px">
+    <div class="col-2" *ngFor="let funcionario of funcionarios">
+      <div class="card">
+        <img class="card-img-top" src="https://randomuser.me/api/portraits/men/{{funcionario.id}}.jpg">
+        <div class="card-body">{{funcionario.nome}}</div>
+      </div>
+    </div>
+  </div>
 </div>

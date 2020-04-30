@@ -9,6 +9,9 @@ export class AppComponent {
   title = 'meu-projeto';
   nome = 'Janayna';
   idade = 10;
+  adicionado = false;
+  funcionarios = [];
+  ultimoId = 0;
 
   getIdade(){
     return this.idade;
@@ -16,9 +19,11 @@ export class AppComponent {
 
   adicionar(){
     console.log(`Adicionando ${this.nome}`);
-
-    const numero = Math.round(Math.random() * 100);
-    this.nome = 'Janix' + numero;
+    this.adicionado = true;
+    this.funcionarios.push({
+      id: ++this.ultimoId,
+      nome: this.nome
+    });
   }
 
   alterarNome(event: any){
