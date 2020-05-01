@@ -6,24 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'meu-projeto';
   nome = 'Janayna';
   idade = 10;
-  adicionado = false;
   funcionarios = [];
-  ultimoId = 0;
+
+  aoAdicionar(funcionario) {
+    this.funcionarios.push(funcionario);
+  }
 
   getIdade(){
     return this.idade;
-  }
-
-  adicionar(){
-    console.log(`Adicionando ${this.nome}`);
-    this.adicionado = true;
-    this.funcionarios.push({
-      id: ++this.ultimoId,
-      nome: this.nome
-    });
   }
 
   alterarNome(event: any){

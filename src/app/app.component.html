@@ -1,18 +1,6 @@
 <div class="container">
   <!--  <h1 class="display-4">Meu nome é {{nome}} e minha idade é {{getIdade() + 20}}!</h1>-->
-  <div class="alert alert-primary" role="alert" *ngIf="adicionado">
-    Funcionário adicionado: <strong>{{nome}}</strong>
-  </div>
-
-  <div class="form-group">
-    <label>Nome</label>
-    <input type="text" class="form-control" [(ngModel)]="nome"
-           (focus)="adicionado = false">
-  </div>
-
-  <button type="button" class="btn btn-primary"
-          (click)="adicionar()" [disabled]="nome.length == 0">Adicionar
-  </button>
+  <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
 
   <!--  bind-disabled ou [disabled]-->
   <!--  (input)="alterarNome($event)" value="{{nome}}" é o mesmo que [(ngModel)]="nome"-->
