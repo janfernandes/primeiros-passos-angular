@@ -10,6 +10,11 @@ export class AppComponent {
   idade = 10;
   funcionarios = [];
 
+
+  dataAniversario = new Date(1990, 3, 19);
+  preco = 12855.32;
+  troco = 0.57392;
+
   aoAdicionar(funcionario) {
     this.funcionarios.push(funcionario);
   }
