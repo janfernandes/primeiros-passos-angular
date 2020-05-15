@@ -8,6 +8,7 @@ import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.co
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { EnvioFormComponent } from './envio-form/envio-form.component';
+import {NavegacaoModule} from './navegacao/navegacao.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EnvioFormComponent } from './envio-form/envio-form.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavegacaoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
