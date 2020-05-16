@@ -11,6 +11,10 @@ import { EnvioFormComponent } from './envio-form/envio-form.component';
 import {NavegacaoModule} from './navegacao/navegacao.module';
 import {FuncionarioAbreviadoService, FuncionarioService} from './funcionario.service';
 
+const criarFuncionarioService = () => {
+  return new FuncionarioAbreviadoService(4);
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,7 @@ import {FuncionarioAbreviadoService, FuncionarioService} from './funcionario.ser
     NavegacaoModule
   ],
   providers: [
-    {provide: FuncionarioService, useClass: FuncionarioAbreviadoService}
+    {provide: FuncionarioService, useFactory: criarFuncionarioService}
   ],
   bootstrap: [AppComponent]
 })
