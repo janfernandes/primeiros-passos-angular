@@ -9,12 +9,12 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { EnvioFormComponent } from './envio-form/envio-form.component';
 import {NavegacaoModule} from './navegacao/navegacao.module';
-import {FuncionarioAbreviadoService, FuncionarioService} from './funcionario.service';
+import {FuncionarioService} from './funcionario.service';
 import {LogService} from './log.service';
 
-const criarFuncionarioService = () => {
-  return new FuncionarioAbreviadoService(4);
-};
+// const criarFuncionarioService = () => {
+//   return new FuncionarioAbreviadoService(4);
+// };
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ const criarFuncionarioService = () => {
     NavegacaoModule
   ],
   providers: [
-    {provide: FuncionarioService, useFactory: criarFuncionarioService},
+    // {provide: FuncionarioService, useFactory: criarFuncionarioService},
+    FuncionarioService,
     LogService,
     { provide: 'LogPrefixo', useValue: 'LOG' }
   ],
