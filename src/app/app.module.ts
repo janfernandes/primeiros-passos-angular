@@ -4,13 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
-import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { EnvioFormComponent } from './envio-form/envio-form.component';
 import {NavegacaoModule} from './navegacao/navegacao.module';
-import {FuncionarioService} from './funcionario.service';
 import {LogService} from './log.service';
+import {FuncionarioModule} from './funcionario/funcionario.module';
 
 // const criarFuncionarioService = () => {
 //   return new FuncionarioAbreviadoService(4);
@@ -19,8 +17,6 @@ import {LogService} from './log.service';
 @NgModule({
   declarations: [
     AppComponent,
-    FuncionarioCardComponent,
-    FuncionarioFormComponent,
     CampoColoridoDirective,
     EnvioFormComponent
   ],
@@ -28,11 +24,11 @@ import {LogService} from './log.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NavegacaoModule
+    NavegacaoModule,
+    FuncionarioModule
   ],
   providers: [
     // {provide: FuncionarioService, useFactory: criarFuncionarioService},
-    FuncionarioService,
     LogService,
     { provide: 'LogPrefixo', useValue: 'LOG' }
   ],

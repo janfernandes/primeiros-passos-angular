@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FuncionarioService} from '../funcionario.service';
-import {LogService} from '../log.service';
+import {LogService} from '../../log.service';
 
 @Component({
   selector: 'app-funcionario-form',
