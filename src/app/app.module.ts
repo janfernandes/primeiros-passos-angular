@@ -10,6 +10,7 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
 import { EnvioFormComponent } from './envio-form/envio-form.component';
 import {NavegacaoModule} from './navegacao/navegacao.module';
 import {FuncionarioAbreviadoService, FuncionarioService} from './funcionario.service';
+import {LogService} from './log.service';
 
 const criarFuncionarioService = () => {
   return new FuncionarioAbreviadoService(4);
@@ -30,7 +31,9 @@ const criarFuncionarioService = () => {
     NavegacaoModule
   ],
   providers: [
-    {provide: FuncionarioService, useFactory: criarFuncionarioService}
+    {provide: FuncionarioService, useFactory: criarFuncionarioService},
+    LogService,
+    { provide: 'LogPrefixo', useValue: 'LOG' }
   ],
   bootstrap: [AppComponent]
 })
