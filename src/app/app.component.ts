@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FuncionarioService} from './funcionario.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {FuncionarioService} from './funcionario.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   nome = 'Janayna';
   idade = 10;
   funcionarios = [];
@@ -16,9 +16,7 @@ export class AppComponent {
   preco = 12855.32;
   troco = 0.57392;
 
-  funcionarioService: FuncionarioService;
-  constructor() {
-    this.funcionarioService = new FuncionarioService();
+  constructor(private funcionarioService: FuncionarioService) {
   }
 
   aoAdicionar(funcionario) {
@@ -32,6 +30,10 @@ export class AppComponent {
 
   alterarNome(event: any){
     this.nome = event.target.value;
+  }
+
+  ngOnInit(){
+    this.funcionarios = this.funcionarioService.consultar();
   }
 
   // adicionarOutrojeito(nome: string){
