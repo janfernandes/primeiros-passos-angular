@@ -4,8 +4,7 @@
 
 <div class="container">
   <!--  <h1 class="display-4">Meu nome é {{nome}} e minha idade é {{getIdade() + 20}}!</h1>-->
-  <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
-
+  <!--  <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>-->
   <!--  bind-disabled ou [disabled]-->
   <!--  (input)="alterarNome($event)" value="{{nome}}" é o mesmo que [(ngModel)]="nome"-->
 
@@ -20,28 +19,45 @@
 
   <!--  <button type="button" class="btn btn-primary" (click)="adicionarOutrojeito(nomeInput.value)">Adicionar</button>-->
 
+  <!--  <div class="row" style="margin-top: 20px">-->
+  <!--    <div class="col-2" *ngFor="let f of funcionarios">-->
+  <!--      <app-funcionario-card [funcionario] = "f"></app-funcionario-card>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <app-funcionario-form></app-funcionario-form>
+
   <div class="row" style="margin-top: 20px">
+
     <div class="col-2" *ngFor="let f of funcionarios">
-      <app-funcionario-card [funcionario] = "f"></app-funcionario-card>
+      <app-funcionario-card [funcionario]="f"></app-funcionario-card>
     </div>
+
   </div>
 </div>
 
-<div class="container">
-<!--  pipes-->
-  <h1>{{ nome | uppercase }}</h1>
-  <h1>{{ dataAniversario | date: 'dd/MM/y' }}</h1>
-  <h1>{{ preco | number: '1.2-2' }}</h1>
-  <h1>{{ troco | currency: 'BRL' }}</h1>
-</div>
+<!--<div class="container">-->
+<!--&lt;!&ndash;  pipes&ndash;&gt;-->
+<!--  <h1>{{ nome | uppercase }}</h1>-->
+<!--  <h1>{{ dataAniversario | date: 'dd/MM/y' }}</h1>-->
+<!--  <h1>{{ preco | number: '1.2-2' }}</h1>-->
+<!--  <h1>{{ troco | currency: 'BRL' }}</h1>-->
+<!--</div>-->
 
-<app-envio-form></app-envio-form>
+<!--<app-envio-form></app-envio-form>-->
 
 
+<<<<<<< HEAD
 <div class="container">
   <app-menu></app-menu>
   <br>
   <app-botao-grande label="jana"></app-botao-grande>
 </div>
 
+
+<!--<div class="container">-->
+<!--  <app-menu></app-menu>-->
+<!--  <br>-->
+<!--  <app-botao-grande label="jana"></app-botao-grande>-->
+<!--</div>-->
 
