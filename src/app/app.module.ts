@@ -9,6 +9,9 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { EnvioFormComponent } from './envio-form/envio-form.component';
 import {NavegacaoModule} from './navegacao/navegacao.module';
+import { CidadesComponent } from './cidades/cidades.component';
+import {CidadeService} from './cidade.service';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,15 +19,17 @@ import {NavegacaoModule} from './navegacao/navegacao.module';
     FuncionarioCardComponent,
     FuncionarioFormComponent,
     CampoColoridoDirective,
-    EnvioFormComponent
+    EnvioFormComponent,
+    CidadesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NavegacaoModule
+    NavegacaoModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CidadeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
