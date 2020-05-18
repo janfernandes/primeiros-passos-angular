@@ -11,7 +11,7 @@ import { EnvioFormComponent } from './envio-form/envio-form.component';
 import {NavegacaoModule} from './navegacao/navegacao.module';
 import { CidadesComponent } from './cidades/cidades.component';
 import {CidadeService} from './cidade.service';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
