@@ -14,19 +14,40 @@ export class CidadesComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.cidadeService.consultar().then(dados => {this.cidades = dados; });
+    this.consultar();
   }
 
   adicionar(nome: string) {
-    alert(nome);
+    this.cidadeService.adicionar({ nome })
+      .then(cidade => {
+        alert(`Cidade "${cidade.nome}"adicionada com o código ${cidade.id}`);
+        this.consultar();
+      });
   }
 
   excluir(id: number) {
-    alert(id);
+    this.cidadeService.excluir(id)
+      .then(() => {
+        alert('Cidade excluída com sucesso!');
+        this.consultar();
+      });
   }
 
   atualizar(cidade: any) {
-    alert(JSON.stringify(cidade));
+    this.cidadeService.atualizar(cidade)
+      .then(() => {
+        alert('Cidade alterada com sucesso!');
+        this.consultar();
+      })
+      .catch(erro => {
+        alert(erro);
+      });
   }
 
+  consultar() {
+    this.cidadeService.consultar()
+      .then(dados => {
+        this.cidades = dados;
+      });
+  }
 }
